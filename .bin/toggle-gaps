@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+INNER=100
+OUTER=0
+
+WORKSPACE=$(i3-msg -t get_workspaces | jq -r '.[] | if .["focused"] then .["name"] else empty end')
+CURRENT_INNER_GAPS=$(i3-msg -t get_tree | jq -r 'recurse(.nodes[]) | if .type == "workspace" and .name == "'"${WORKSPACE}"'" then .gaps.inner else empty end')
+
+if [ $((${CURRENT_INNER_GAPS} + ${INNER})) -ge 0 ]
+then
+    i3-msg "gaps inner current set 0; gaps outer current set 0"
+else
+    i3-msg "gaps inner current set ${INNER}; gaps outer current set ${OUTER}"
+fi

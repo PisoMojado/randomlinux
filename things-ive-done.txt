@@ -1,0 +1,13 @@
+I have installed a special script for hard-coding monitor resolutions for the vm display. You can find a wiki page for this.
+I have installed a special config that makes the default resolution the one for my imac. It's from the same page as above
+I have installed a special script for GTK3 that scales everything in GDK up to 2
+  * I may need something similar for Qt5
+I have installed fonts into a ~/.fonts directory, and updated the database
+I have .Xresources, .xinitrc, etc. in my home directory
+I have enabled dhcpd.service and xdm.service
+I manually installed polybar from AUR
+  * I manually installed a bunch of fonts, but in the future, these are the ones you should install:
+  ** Font Awesome (ttf-font-awesome)
+  ** DejaVu Sans
+I installed cower and pacaur to make installation from the AUR easier
+  * There has been at least one case where I could not easily uninstall stuff from the AUR

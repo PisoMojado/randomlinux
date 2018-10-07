@@ -37,3 +37,15 @@ I installed ttf-font-awesome and ttf-dejavu
 I installed cower and pacaur to make installation from the AUR easier
   * There has been at least one case where I could not easily uninstall stuff from the AUR
 I installed polybar from AUR
+
+TODOs
+* I need to play around with compton to get the visual artifacts to go away
+* I need to play around with my graphics drivers, if they are the cause of the above
+* I need to configure the IO stuff for my flash card, in order to minimize damage to it
+* I need to make sure wifi works
+* I need to make sure bluetooth works
+* I need to make sure I can access bluetooth devices at login time
+* I need to make sure audio works
+* I need to install drivers for trackpad
+* I need to install libraries to adjust screen brightness
+* I need to look over the Mac page on the arch wiki to see if there is anything else I can bring over

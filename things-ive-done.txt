@@ -42,6 +42,9 @@ I installed cower and pacaur to make installation from the AUR easier
 I installed polybar from AUR
 I installed redshift, and manually set up a config, and placed it into i3
   * If available, see .config/redshift
+I installed lm_sensors
+  * There are guides online for setup
+  * The short version is "sudo sensors-detect", say yes to everything, and save the config
 
 TODOs
 * I need to play around with compton to get the visual artifacts to go away

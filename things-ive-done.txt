@@ -30,6 +30,9 @@ For every case:
 I have installed a special script for GTK3 that scales everything in GDK up to 2
   * If available, see root/etc/profile.d/gdkscale.sh
   * I may need something similar for Qt5
+I have installed a special driver for the trackpad, xf86-input-mtrack-git
+  * It requires an xconf configuration file, which I put at /etc/X11/xorg.conf.d/10-mtrack.conf
+  * If available, see root/etc/X11/xorg.conf.d/10-mtrack.conf
 I have .Xresources, .xinitrc, etc. in my home directory
 I have enabled dhcpd.service and xdm.service
   * Run "systemctl enable dhcpcd.service" and "systemctl enable xdm.service" with root privileges
@@ -37,6 +40,8 @@ I installed ttf-font-awesome and ttf-dejavu
 I installed cower and pacaur to make installation from the AUR easier
   * There has been at least one case where I could not easily uninstall stuff from the AUR
 I installed polybar from AUR
+I installed redshift, and manually set up a config, and placed it into i3
+  * If available, see .config/redshift
 
 TODOs
 * I need to play around with compton to get the visual artifacts to go away

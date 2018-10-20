@@ -45,6 +45,13 @@ I installed redshift, and manually set up a config, and placed it into i3
 I installed lm_sensors
   * There are guides online for setup
   * The short version is "sudo sensors-detect", say yes to everything, and save the config
+I installed bluez and bluez-utils to get support for bluetooth
+  * I enabled bluetooth.service, as well
+  * I began work on connecting my headphones, by using bluetoothctl to find, pair and trust my headphones, but it does not yet connect
+  * I paired my keyboard by obtaining the MAC address while in macOS, and using it to connect.
+  * I enabled bluetooth to boot on startup, by setting AutoEnable=true in the bluetooth main config
+  * If available, see root/etc/bluetooth/main.conf
+I install s-tui from AUR
 
 TODOs
 * I need to play around with compton to get the visual artifacts to go away

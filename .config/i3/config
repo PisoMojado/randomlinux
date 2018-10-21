@@ -162,7 +162,7 @@ bindsym $cmd+Shift+r restart
 #bindsym $cmd+Shift+O exec exit
 bindsym $cmd+Shift+o exec "i3-nagbar -t warning -m 'Are you sure you want to log out?' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $cmd+Shift+p exec systemctl poweroff -i
-bindsym $cmd+l exec i3lock
+bindsym $cmd+l exec i3lock -i /home/michael/Pictures/silentlake.png
 
 #Resize focused window
 bindsym $alt+Shift+a resize shrink width 10px or 10ppt
@@ -190,8 +190,9 @@ bindsym $alt+e layout toggle split
 #        tray_output primary
 #}
 
-#exec compton --config /home/michael/.config/compton.conf -b
-exec compton --backend glx --paint-on-overlay --vsync opengl-swc
+#exec compton --config /home/michael/.config/compton/config -b
+#exec compton --config /home/michael/.config/compton/config
+exec compton --backend glx --paint-on-overlay --dbe --vsync opengl-swc
 exec /home/michael/.fehbg
 exec polybar example
 exec termite

@@ -74,9 +74,9 @@ TODOs
 * I need to play around with my graphics drivers, if they are the cause of the above
 * I need to configure the IO stuff for my flash card, in order to minimize damage to it
 * I need to make sure wifi works
-* I need to make sure bluetooth works
-* I need to make sure I can access bluetooth devices at login time
-* I need to make sure audio works
-* I need to install drivers for trackpad
-* I need to install libraries to adjust screen brightness
+* I need to make sure the webcam works
+* I need to figure out why the headphones sometimes have very slow playback
+* I need to figure out why I can't control the built in audio
+* I need to finish configuring trackpad drivers, or find new ones that work.
+* I need to create a script that sends brightness levels to /sys/class/backlight/acpi_video0/brightness
 * I need to look over the Mac page on the arch wiki to see if there is anything else I can bring over

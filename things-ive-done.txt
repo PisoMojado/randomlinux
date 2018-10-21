@@ -49,6 +49,14 @@ I installed bluez and bluez-utils to get support for bluetooth
   * I enabled bluetooth.service, as well
   * I began work on connecting my headphones, by using bluetoothctl to find, pair and trust my headphones, but it does not yet connect
   * I paired my keyboard by obtaining the MAC address while in macOS, and using it to connect.
+  * I paired my trackpad using a similar methodology as above, but it required a little more:
+    * First, I set pairable, discoverable and pair to on
+    * Then, I typed in 'trust <mac>' before the trackpad was unplugged from my computer (i.e. it's bluetooth antenna was not on)
+    * Then, I unplugged the device and tapped it to coerce it into bluetooth activity.
+    * As soon as I saw the device in bluetoothctl, I hit enter to trust the device
+    * I then quickly attempted to pair the device
+    * On a successful pairing, the device actually disconnected
+    * Upon a manual connect, the trackpad successfully remained active and usable
   * I enabled bluetooth to boot on startup, by setting AutoEnable=true in the bluetooth main config
   * If available, see root/etc/bluetooth/main.conf
 I install s-tui from AUR

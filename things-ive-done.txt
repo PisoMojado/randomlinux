@@ -47,7 +47,6 @@ I installed lm_sensors
   * The short version is "sudo sensors-detect", say yes to everything, and save the config
 I installed bluez and bluez-utils to get support for bluetooth
   * I enabled bluetooth.service, as well
-  * I began work on connecting my headphones, by using bluetoothctl to find, pair and trust my headphones, but it does not yet connect
   * I paired my keyboard by obtaining the MAC address while in macOS, and using it to connect.
   * I paired my trackpad using a similar methodology as above, but it required a little more:
     * First, I set pairable, discoverable and pair to on
@@ -60,6 +59,14 @@ I installed bluez and bluez-utils to get support for bluetooth
   * I enabled bluetooth to boot on startup, by setting AutoEnable=true in the bluetooth main config
   * If available, see root/etc/bluetooth/main.conf
 I install s-tui from AUR
+I installed alsa-utils, alsa-firmware and alsa-plugins for audio
+  * So far, I still have not yet found a way to get audio to play from the built in speakers
+  * The alsa state services also fail to launch, reporting missing state and conf files
+  * Before I installed pulseaudio for my headphones, I saw no volume controls, unless I ran some kind of command from the command line, like sound-test. After that, I would only see a PCM volume bar, which is not the master volume bar, and its adjustment did not provide volume.
+I installed pulseaudio-bluetooth and pulseaudio-alsa
+  * I noticed that this changed the display of polybar, and also I gained a master volume bar in alsamixer
+  * After doing this, I paired my headphones, by first trusting and then pairing the headset in bluetoothctl
+  * After paired and connected, I could get audio through the headphones
 
 TODOs
 * I need to play around with compton to get the visual artifacts to go away

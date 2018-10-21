@@ -36,7 +36,8 @@ I have installed a special driver for the trackpad, xf86-input-mtrack-git
 I have .Xresources, .xinitrc, etc. in my home directory
 I have enabled dhcpd.service and xdm.service
   * Run "systemctl enable dhcpcd.service" and "systemctl enable xdm.service" with root privileges
-I installed ttf-font-awesome and ttf-dejavu
+I installed ttf-font-awesome, ttf-dejavu, adobe-source-han-sans-otc-fonts, and adobe-source-han-serif-otc-fonts
+  * The latter two are fonts for CJK characters
 I installed cower and pacaur to make installation from the AUR easier
   * There has been at least one case where I could not easily uninstall stuff from the AUR
 I installed polybar from AUR

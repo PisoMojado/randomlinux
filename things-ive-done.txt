@@ -68,6 +68,10 @@ I installed pulseaudio-bluetooth and pulseaudio-alsa
   * I noticed that this changed the display of polybar, and also I gained a master volume bar in alsamixer
   * After doing this, I paired my headphones, by first trusting and then pairing the headset in bluetoothctl
   * After paired and connected, I could get audio through the headphones
+  * I added the 'video' group on my system to the list of entities with access to changing the system's brightness, and I also added my user to that group.
+    * If available, see root/etc/udev/rules.d/backlight.rules
+  * I created a script that will increase or decrease the brightness of my display in units of 5
+    * If available, see .bin/backlight-adjust
 
 TODOs
 * I need to play around with compton to get the visual artifacts to go away

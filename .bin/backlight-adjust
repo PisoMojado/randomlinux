@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+STEP="5"
+BACKLIGHT_PATH="/sys/class/backlight/acpi_video0"
+CURRENT_BRIGHTNESS="$(cat "${BACKLIGHT_PATH}/brightness")"
+MAX_BRIGHTNESS="$(cat "${BACKLIGHT_PATH}/max_brightness")"
+MIN_BRIGHTNESS="0"
+if [ "$1" == "add" ]
+then
+    INCREMENT="$(echo $((${CURRENT_BRIGHTNESS} + ${STEP})))"
+    ADJUSTMENT="$(echo $((${INCREMENT} > ${MAX_BRIGHTNESS} ? ${MAX_BRIGHTNESS} : ${INCREMENT})))"
+else
+    INCREMENT="$(echo $((${CURRENT_BRIGHTNESS} - ${STEP})))"
+    ADJUSTMENT="$(echo $((${INCREMENT} < ${MIN_BRIGHTNESS} ? ${MIN_BRIGHTNESS} : ${INCREMENT})))"
+fi
+
+echo "${ADJUSTMENT}" | tee "${BACKLIGHT_PATH}/brightness"

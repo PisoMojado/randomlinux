@@ -10,11 +10,14 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 #Border color stuff
-client.focused       #FFFFFF #FFFFFF #000000 #DDDDDD #FFFFFF
+client.focused       #AED1EC #AED1EC #001932 #9AC3D2 #AED1EC
+#client.focused       #FFFFFF #FFFFFF #000000 #DDDDDD #FFFFFF
 
 #Take off window titles
-for_window [class="^.*"] border pixel 30
+for_window [class="^.*"] border pixel 15
 
+#Make feh windows floating
+for_window [class="^feh"] floating enable
 #Attempt to emulate binary insert
 for_window [class="^.*"] split toggle
 
@@ -25,14 +28,11 @@ for_window [class="^.*"] split toggle
 gaps inner 100
 gaps outer 0
 
-#set $alt Mod1
-#set $cmd Mod4
-#Fix this by remapping keys on keyboard
-set $alt Mod4
-set $cmd Mod1
+set $alt Mod1
+set $cmd Mod4
 set $ctl Control
 
-font pango:DejaVu Sans Mono 18
+font pango:DejaVu Sans Mono 9
 
 # Use Mouse+$cmd to drag floating windows to their wanted position
 floating_modifier $alt
@@ -44,6 +44,7 @@ bindsym $cmd+Shift+Return exec emacsclient -c -a '' -e '(eshell)'
 #Applications
 #Files
 bindsym $cmd+f exec termite -e vifm
+bindsym $cmd+Shift+f exec pcmanfm
 bindsym $cmd+t exec /home/michael/bash-test vim
 #Database applications
 #$bindsym $cmd+d 
@@ -55,8 +56,10 @@ bindsym $cmd+i exec idea
 #Chrome
 bindsym $cmd+g exec chromium
 bindsym $cmd+Shift+g exec chromium --incognito
+# Volume mixer
+bindsym $cmd+v exec termite -e pulsemixer
 #Vim
-bindsym $cmd+v exec termite -e vim
+bindsym $cmd+Shift+v exec termite -e vim
 #htop
 bindsym $cmd+h exec termite -e htop
 
@@ -68,8 +71,9 @@ bindsym $cmd+h exec termite -e htop
 #bindsym $cmd+j
 #Messaging (pidgin)
 #bindsym $cmd+p
-#Pomodoro timer
-#bindsym $cmd+m
+#Music
+bindsym $cmd+m exec termite -e 'ncmpcpp'
+bindsym $cmd+Shift+m exec termite -e 'tmux new-session -A -D -s cmus "/bin/cmus"'
 #Time logger
 #bindsym $cmd+t
 #Calculator
@@ -159,12 +163,15 @@ bindsym $ctl+$alt+Right workspace next
 # reload the configuration file
 bindsym $cmd+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $cmd+Shift+r restart
+#bindsym $cmd+Shift+i restart
 # exit i3 (logs you out of your X session)
 #bindsym $cmd+Shift+O exec exit
-bindsym $cmd+Shift+o exec "i3-nagbar -t warning -m 'Are you sure you want to log out?' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $cmd+Shift+p exec systemctl poweroff -i
-bindsym $cmd+l exec i3lock -i /home/michael/Pictures/silentlake.png
+bindsym $cmd+Shift+o exec "i3-nagbar -t warning -m 'Are you sure you want to log out?' -b 'Yes' 'i3-msg exit'"
+bindsym $cmd+Shift+p exec "i3-nagbar -t warning -m 'Are you sure you want to shut down?' -b 'Yes' 'systemctl poweroff'"
+bindsym $cmd+Shift+r exec "i3-nagbar -t warning -m 'Are you sure you want to reboot?' -b 'Yes' 'systemctl reboot'"
+#bindsym $cmd+Shift+p exec systemctl poweroff
+#bindsym $cmd+Shift+r exec systemctl reboot
+bindsym $cmd+l exec i3lock -i /home/michael/city_resize.png
 
 #Resize focused window
 bindsym $alt+Shift+a resize shrink width 10px or 10ppt
@@ -176,7 +183,7 @@ bindsym $alt+Shift+f resize grow width 10px or 10ppt
 bindsym $cmd+Shift+a resize grow width 10px or 10ppt
 bindsym $cmd+Shift+s resize shrink height 10px or 10ppt
 bindsym $cmd+Shift+d resize grow height 10px or 10ppt
-bindsym $cmd+Shift+f resize shrink width 10px or 10ppt
+#bindsym $cmd+Shift+f resize shrink width 10px or 10ppt
 
 # split in horizontal orientation
 bindsym $alt+u split h
@@ -199,7 +206,8 @@ bindsym Scroll_Lock exec /home/michael/.bin/backlight-adjust sub
 #exec compton --config /home/michael/.config/compton/config -b
 #exec compton --config /home/michael/.config/compton/config
 exec compton --backend glx --paint-on-overlay --dbe --vsync opengl-swc
-exec /home/michael/.fehbg
-exec polybar example
+#exec /home/michael/.fehbg
+exec xwinwrap -ov -fs -- gifview -w WID -a /home/michael/city_resize.gif
+exec polybar mine
 exec termite
 exec redshift

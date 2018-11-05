@@ -1,0 +1,18 @@
+#Increase Volume
+"pactl set-sink-volume @DEFAULT_SINK@ +1000"
+    XF86AudioRaiseVolume
+#Decrease Volume
+"pactl set-sink-volume @DEFAULT_SINK@ -1000"
+    XF86AudioLowerVolume
+#Mute/Unmute
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    XF86AudioMute
+#Play/Pause
+"/home/michael/.bin/mpc_toggle"
+    XF86AudioPlay
+#Next
+"mpc next"
+    XF86AudioNext
+#Prev
+"mpc prev"
+    XF86AudioPrev

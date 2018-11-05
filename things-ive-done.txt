@@ -75,6 +75,8 @@ I installed pulseaudio-bluetooth and pulseaudio-alsa
     * If available, see root/etc/udev/rules.d/backlight.rules
   * I created a script that will increase or decrease the brightness of my display in units of 5
     * If available, see .bin/backlight-adjust
+* I installed xwinwrap to get animated wallpapers to work with compton
+* I installed xbindkeys to get multimedia keys to behave correctly
 
 TODOs
 * I need to play around with compton to get the visual artifacts to go away

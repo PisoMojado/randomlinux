@@ -77,6 +77,8 @@ I installed pulseaudio-bluetooth and pulseaudio-alsa
     * If available, see .bin/backlight-adjust
 * I installed xwinwrap to get animated wallpapers to work with compton
 * I installed xbindkeys to get multimedia keys to behave correctly
+* I installed iwd and enabled iwd.service in systemd to support wifi networks
+  * It uses a client to connect to the servie, iwctl, which feels like bluetoothctl
 
 TODOs
 * I need to play around with compton to get the visual artifacts to go away

@@ -16,3 +16,8 @@
 #Prev
 "mpc prev"
     XF86AudioPrev
+#Brightness up
+"/home/michael/.bin/backlight-adjust add"
+    XF86MonBrightnessUp
+"/home/michael/.bin/backlight-adjust sub"
+    XF86MonBrightnessDown

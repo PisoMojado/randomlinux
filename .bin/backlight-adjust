@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-STEP="5"
-BACKLIGHT_PATH="/sys/class/backlight/acpi_video0"
+STEPS="100"
+BACKLIGHT_PATH="/sys/class/backlight/intel_backlight"
 CURRENT_BRIGHTNESS="$(cat "${BACKLIGHT_PATH}/brightness")"
 MAX_BRIGHTNESS="$(cat "${BACKLIGHT_PATH}/max_brightness")"
+STEP="$((${MAX_BRIGHTNESS} / ${STEPS}))"
 MIN_BRIGHTNESS="0"
 if [ "$1" == "add" ]
 then

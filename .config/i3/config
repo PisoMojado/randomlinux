@@ -57,9 +57,9 @@ bindsym $cmd+i exec idea
 bindsym $cmd+g exec chromium
 bindsym $cmd+Shift+g exec chromium --incognito
 # Volume mixer
-bindsym $cmd+v exec termite -e pulsemixer
+bindsym $cmd+Shift+v exec termite -e pulsemixer
 #Vim
-bindsym $cmd+Shift+v exec termite -e vim
+bindsym $cmd+v exec termite -e vim
 #htop
 bindsym $cmd+h exec termite -e htop
 
@@ -80,6 +80,10 @@ bindsym $cmd+Shift+m exec termite -e 'tmux new-session -A -D -s cmus "/bin/cmus"
 bindsym $cmd+c emacsclient -a '' -n -c -e '(full-calc)'
 # open ssh connection
 bindsym $cmd+s exec rofi -show ssh
+#bluetoothctl
+bindsym $cmd+Shift+b exec termite -e 'bluetoothctl'
+#wifi
+bindsym $cmd+Shift+i exec termite -e 'iwctl'
 
 # kill focused window
 bindsym $cmd+w kill

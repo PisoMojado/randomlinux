@@ -79,6 +79,11 @@ I installed pulseaudio-bluetooth and pulseaudio-alsa
 * I installed xbindkeys to get multimedia keys to behave correctly
 * I installed iwd and enabled iwd.service in systemd to support wifi networks
   * It uses a client to connect to the servie, iwctl, which feels like bluetoothctl
+* I learned that iwd is not necessary for wifi access with wpa2 personal. You can use, instead, a netctl profile configured with  wpa_supplicant
+  * You can even create, out of the box, a profile by using 'wifi-config -o'
+  * To do this on a new machine, you must first install 'dialog' and 'wpa_supplicant' before running the host from its own operating system.
+* I learned how to dim the screen after a certain amount of time from a tty: you use setterm -blank [0-60]
+  * 1-60 are minutes, 0 minutes is to disable
 
 TODOs
 * I need to play around with compton to get the visual artifacts to go away
